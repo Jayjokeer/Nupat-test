@@ -1,7 +1,7 @@
 const express= require('express')
 const router = express.Router()
 const axios = require('axios')
-
+require('dotenv').config()
 
 
 const options = {
@@ -9,7 +9,7 @@ const options = {
     url: 'https://yummly2.p.rapidapi.com/feeds/auto-complete',
     params: {q: 'chicken soup'},
     headers: {
-      'X-RapidAPI-Key': 'ae3543a747msh8fb627171bb536ap1575e3jsn68ca4ca7ac6a',
+      'X-RapidAPI-Key':process.env.RAPID_API_KEY ,
       'X-RapidAPI-Host': 'yummly2.p.rapidapi.com'
     }
   };
