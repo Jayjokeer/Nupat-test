@@ -24,7 +24,7 @@ router.get('/feeds/search',async(req,res)=>{
             res.json(response.data);
         }).catch(function (error) {
             console.error(error);
-            res.send(error);
+            res.status(404).send(error);
         });
 });
 
