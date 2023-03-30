@@ -1,7 +1,6 @@
-const express= require('express')
-const router = express.Router()
-const axios = require('axios')
-require('dotenv').config()
+const express= require('express');
+const router = express.Router();
+const axios = require('axios');
 
 
 const options = {
@@ -16,15 +15,14 @@ const options = {
 
 router.get('/feeds/autocomplete',async(req,res)=>{
     await axios.request(options).then(function (response) {
-        res.send(response.data)
-        console.log(response.data);
+        res.json(response.data);
     }).catch(function (error) {
         console.error(error);
-        res.send(error)
+        res.send(error);
     });
 });
 
 
 
 
-module.exports= router
+module.exports= router;

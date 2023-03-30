@@ -1,6 +1,6 @@
-const  express = require('express')
-const router = express.Router()
-const axios = require('axios')
+const  express = require('express');
+const router = express.Router();
+const axios = require('axios');
 
 const options = {
   method: 'GET',
@@ -21,12 +21,11 @@ const options = {
 
 router.get('/feeds/search',async(req,res)=>{
     await axios.request(options).then(function (response) {
-            console.log(response.data);
-            res.send(response.data)
+            res.json(response.data);
         }).catch(function (error) {
             console.error(error);
-            res.send(error)
+            res.send(error);
         });
-})
+});
 
-module.exports= router
+module.exports= router;

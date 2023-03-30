@@ -1,5 +1,5 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
 const axios = require('axios');
 
 const options = {
@@ -19,11 +19,11 @@ const options = {
 };
 router.get('/feeds/list-similarities',async(req,res)=>{
     await axios.request(options).then(function (response) {
-            console.log(response.data);
-            res.send(response.data)
+            res.json(response.data);
         }).catch(function (error) {
             console.error(error);
+            res.send(error);
     });
-})
+});
 
-module.exports= router
+module.exports= router;
